@@ -13,27 +13,50 @@
 <style scoped lang="scss">
     .first-block {
         display: grid;
-        width: 80%;
-        column-gap: 30px;
-        margin: 50px 11.5%;
-        grid-template-columns: 55% 45%;
+        justify-content: center;
+        grid-template-columns: auto auto;
+        width: 100%;
+        column-gap: 50px;
+        margin-bottom: 50px;
         img {
-            width: 100%;
+            width: 721px;
+            height: 474px;
+            object-fit: cover;
         }
         h1, h2, p {
             text-align: left;
             margin: 25px 0;
         }
+        p {
+            font-family: 'Source Serif Pro';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #666666;
+        }
         h1 {
             font-size: 50px;
-                    }
+            color: black;
+            font-family: 'Tenor Sans';
+            font-style: normal;
+            font-weight: 400;
+        }
         h3 {
             text-transform: uppercase;
             color: #999999;
             text-align: left;
+            font-size: 15px;
         }
         h2 {
+            font-family: 'Libre Franklin';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 12px;
+            letter-spacing: 1px;
             text-transform: uppercase;
+            color: #000000;
         }
     }    
 </style>

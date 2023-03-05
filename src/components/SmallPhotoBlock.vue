@@ -1,6 +1,8 @@
 <template>
     <div class="SmallPhotoBlock">
-        <img v-bind:src="image"/>
+        <div>
+            <img v-bind:src="image"/>
+        </div>
         <h1>{{ title }}</h1>
         <p>{{ description }}</p>
         <h6>{{ author }}</h6>
@@ -23,25 +25,29 @@ export default defineComponent({
 
 <style scoped lang="scss">
     .SmallPhotoBlock {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: center;
-        flex-wrap: wrap;
+        div {
+            overflow: hidden; /// 
+            width: 285;
+            height: 187px; 
+        }
+        div img {
+            width: 285;
+            height: 187px; 
+            object-fit:cover;
+            transition: 1s; /* Время эффекта */
+            display: block; /* Убираем небольшой отступ снизу */
+        }
+        img:hover {transform: scale(1.2);}
         
-        p, 
-        h1, 
-        h6,
-        img {
-            width: 90%;
-            margin: 0 5%;
-            padding: 5px;
+        p, h1, h6, img {
             text-align: left;
         }
         h1 {
+            margin-top: 5px;
             text-transform: uppercase;
             color: #999999;
-            font-size: 20px;
+            font-size: 15px;
             font-family: 'Libre Franklin';
             font-weight: bold;
             font-weight: 400;
@@ -50,13 +56,14 @@ export default defineComponent({
             font-family: 'Tenor Sans';
             font-style: normal;
             font-weight: 400;
-            font-size: 25px;
+            font-size: 20px;
             text-align: left;;
             text-transform: uppercase;
             color: #000000;
+            margin: 10px 0;
         }
         h6 {
-            font-size: 20px;
+            font-size: 15px;
             letter-spacing: 1px;
             text-transform: uppercase;
             color: #000000;

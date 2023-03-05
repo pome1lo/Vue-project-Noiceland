@@ -1,6 +1,8 @@
 <template>
     <div class="MediumPhotoBlock">
-        <img v-bind:src="image"/>
+        <div>
+            <img v-bind:src="image"/>
+        </div>
         <h1>{{ title }}</h1>
         <p>{{ description }}</p>
         <h6>{{ author }}</h6>
@@ -23,23 +25,27 @@ export default defineComponent({
 
 <style scoped lang="scss">
     .MediumPhotoBlock {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: center;
-        flex-wrap: wrap;
         margin-bottom: 30px;
-
-        p, 
-        h1, 
-        h6,
-        img {
-            width: 90%;
-            margin: 0 5%;
-            padding: 7px;
+        div {
+            overflow: hidden; /// 
+            width: 385px;
+            height: 250px; 
+        }
+        div img {
+            width: 385px;
+            height: 250px;
+            object-fit: fill;
+            transition: 1s; /* Время эффекта */
+            display: block; /* Убираем небольшой отступ снизу */
+        }
+        img:hover {transform: scale(1.2);}
+        
+        p, h1, h6, img {
             text-align: left;
         }
         h1 {
+            margin-top: 5px;
             text-transform: uppercase;
             color: #999999;
             font-size: 15px;
@@ -51,10 +57,11 @@ export default defineComponent({
             font-family: 'Tenor Sans';
             font-style: normal;
             font-weight: 400;
-            font-size: 30px;
+            font-size: 20px;
             text-align: left;;
             text-transform: uppercase;
             color: #000000;
+            margin: 10px 0;
         }
         h6 {
             font-size: 15px;

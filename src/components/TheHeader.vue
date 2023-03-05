@@ -33,6 +33,6 @@ header {
         color: darkred;
         }
     }
-    }  
+}
 }
 </style>

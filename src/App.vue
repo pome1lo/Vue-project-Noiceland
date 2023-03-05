@@ -2,6 +2,8 @@
   <router-view/>
 </template>
 
+
+
 <style lang="scss">
 * { 
     text-decoration: none;
@@ -17,6 +19,15 @@
   color: #2c3e50;
 }
 
+._anim-items {
+  transform: translate(-100px, 50px);
+  opacity: 0;
+  transition: 0.8s ease 0s;
+}
+._activeScroll {
+  transform: translate(0, 0);
+  opacity: 1;
+}
 nav {
   padding: 30px;
 
